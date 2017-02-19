@@ -1,0 +1,78 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="black-logo.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="./datamaps.all.min.js"></script>
+    <script src="./canvas.js"></script>
+</head>
+
+<body>
+    <title id="title">ASU GSV Summit Map</title>
+    <div id="myDiv" style="position: fixed; width: 80%; height: 80%;">
+        <script src="./main2.js"></script>
+        <div id="side" style="position: fixed; height: 20%; width: 80%">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <center>Company</center>
+                        </th>
+                        <th>
+                            <center>Year Founded</center>
+                        </th>
+                        <th>
+                            <center>Industry</center>
+                        </th>
+                        <th>
+                            <center>Type</center>
+                        </th>
+                        <th>
+                            <center>Mission</center>
+                        </th>
+                        <th>
+                            <center>Bio</center>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="company"></td>
+                        <td id="yearFounded"></td>
+                        <td id="industry"></td>
+                        <td id="type"></td>
+                        <td id="mission"></td>
+                        <td id="bio"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="rightDiv">
+        <a href="https://asugsvsummit.com/"><img src="Logo.png"></img>
+        </a>
+        <h1>About</h1>
+        <!-- <label class="switch">
+					  <input id = "slider" type="checkbox">
+					  <div class="slider round"></div></label> --->
+        <p style="font-size: 13px;">"The Annual ASU GSV Summit is the most important assembly of leading innovators across the education and talent sectors.
+            <br>
+            <br> This three-day sold-out event gathers more than 3,500 entrepreneurs, business leaders, investors, policy makers, philanthropists, and educators to accelerate innovation in education and talent."</p> <i style="text-align: right;">-The New York Times</i>
+        <h1>Summit Attendee Composition</h1>
+        <div id="piechartContainer"></div>
+        <h1>Summit Attendance Growth</h1>
+        <div id="barchartContainer" style="height: 300px; width: 100%;"></div>
+        <h1>More Information</h1>
+        <a href="https://asugsvsummit.com/2016-speakers/">
+            <button class=" button button1">2016 Speakers</button>
+        </a>
+        <p></p>
+        <a href="https://asugsvsummit.com/2016-sponsors/">
+            <button class=" button button1">2016 Sponsors</button>
+        </a>
+    </div>
+</body>

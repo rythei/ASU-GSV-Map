@@ -1,0 +1,384 @@
+/* The animation code */
+@keyframes example {
+    0%   {opacity: .1;}
+    25%  {opacity: .25;}
+    50%  {opacity: .5;}
+    100% {opacity: 1;}
+}
+
+
+/*
+ * Flash animation
+*/
+@-webkit-keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: .50;}
+}
+@keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0.50;}
+}
+
+@keyframes glowingOrbs {
+    0%   {
+        box-shadow: 0px 0px 20px rgba(255,255,255,1), 5px 5px 100px rgba(255,255,255,1);
+        background-color: rgba(255,255,255,.7);
+    }
+    25% {
+        background-color: rgba(255,255,255,1);
+    }
+    50%  {
+        box-shadow: 0px 0px 80px rgba(255,255,255,1), 5px 5px 100px rgba(255,255,255,1);
+        background-color: rgba(255,255,255,1);
+    }
+    75% {
+        background-color: rgba(255,255,255,1);
+    }
+    100% {
+        box-shadow: 0px 0px 20px rgba(255,255,255,1), 5px 5px 100px rgba(255,255,255,1);
+        /*transform: rotate(360deg);*/
+        background-color: rgba(255,255,255,.7);
+    }
+}
+
+
+.bubbles.style{
+	fill: rgb(0,255,255)
+}
+
+
+body{
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+    background-color: #000000;
+}
+
+#myDiv{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 80%;
+}
+
+#rightDiv {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 20%;
+	background-color:rgba(40,40,40,.1);
+	max-height: 1000px;
+    overflow-y: scroll;
+	color:#fff;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+	color: rgb(200,200,200);
+	border-bottom:1px solid #09C1E3;
+}
+
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 9px;
+	color: rgb(0,0,0);
+    text-align: left;
+}
+
+p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	padding: 5px 5px 5px 5px;
+	color: rgb(200,200,200);
+}
+
+
+#rightDiv::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#rightDiv::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #F5F5F5;
+}
+
+#rightDiv::-webkit-scrollbar-thumb
+{
+		border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.25, rgb(91, 91, 91)),
+									   color-stop(0.75, rgb(147, 147, 147)),
+									   color-stop(0.86, rgb(91, 91, 91)));
+}
+
+#piechartContainer {
+	height: 200px;
+	width: 70%;
+	padding-left: 40px;
+}
+
+.canvasjs-chart-credit {
+   display: none;
+}
+
+@keyframes another {
+    0%   {
+        box-shadow: 0px 0px 20px rgba(255,255,255,1), 5px 5px 100px rgba(255,255,255,1);
+        background-color: rgba(180,180,180,1);
+        transform: scale(.75);
+    }
+    25% {
+        background-color: rgba(210,210,210,1);
+        transform: scale(.85);
+    }
+    50%  {
+        box-shadow: 0px 0px 55px rgba(255,255,255,1), 5px 5px 100px rgba(255,255,255,1);
+        background-color: rgba(255,255,255,1);
+        transform: scale(1);
+    }
+    75% {
+        background-color: rgba(255,255,255,1);
+         transform: scale(0.85);
+    }
+    100% {
+        box-shadow: 0px 0px 20px rgba(255,255,255,1), 5px 5px 100px rgba(255,255,255,1);
+        transform: rotate(360deg);
+        background-color: rgba(180,180,180,1);
+        transform: scale(.75);
+    }
+}
+
+.gotohell {
+    transform: rotate(0deg);
+    position: absolute;
+    border-radius: 90px;
+    filter: blur(.05em);
+    background-color: rgba(255,255,255,1);
+}
+
+.trace.scattergeo > path.point {
+    opacity: 0 !important;
+}
+
+.gotohell.party {
+    animation: another 7s linear infinite;
+}
+
+
+#geo > svg:nth-child(2) > g.baselayer > g.subunits > path{
+	 animation: flash 10s infinite;
+}
+
+#title{
+	color: rgb(255,255,255);
+}
+
+@import "compass/css3";
+
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+table {
+  border-collapse: separate;
+  background-color:rgba(40,40,40,.2);
+  @include border-radius(5px);
+  margin:0px;
+  @include box-shadow(0px 0px 5px) rgb(0,0,0));
+  height: 20%;
+  width: 100%;
+
+}
+
+thead {
+  @include border-radius(5px);
+}
+
+thead th {
+  font-family: 'Oswald', sans-serif;
+  font-size:18px;
+  font-weight:300;
+    /*background-image: url(background.png);*/
+  color:#fff;
+  border-bottom:1px solid #09C1E3;
+  @include text-shadow(1px 1px 0px rgba(0,0,0,0.5));
+  text-align:left;
+  padding:0px;
+  @include background-image(linear-gradient(#646f7f, #4a5564));
+
+
+  &:first-child {
+   @include border-top-left-radius(5px);
+  }
+
+  &:last-child {
+    @include border-top-right-radius(5px);
+  }
+}
+
+tbody tr td {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(200,200,200);
+  font-size:15px;
+  padding:5px 5px 5px 5px;
+
+}
+
+tbody tr:nth-child(2n) {
+  background:rgba(40,40,40,.5);
+}
+
+tbody tr:last-child td {
+  border-bottom:none;
+  &:first-child {
+    @include border-bottom-left-radius(5px);
+  }
+  &:last-child {
+    @include border-bottom-right-radius(5px);
+  }
+}
+
+#company{
+	width: 10%;
+}
+
+#yearFounded{
+    width: 5%;
+}
+
+#industry{
+    width: 5%;
+}
+
+#type{
+    width: 10%;
+}
+
+#mission{
+	width: 30%;
+}
+
+#bio{
+	width: 30%;
+}
+
+
+tbody:hover > tr td {
+  @include opacity(0.5);
+}
+  /* uncomment for blur effect
+  /* color: transparent;
+  @include text-shadow(0px 0px 2px rgba(0,255,255,0.8));
+}
+
+tbody:hover > tr:hover td {
+  @include text-shadow(none);
+  color:#2d2d2d;
+  @include opacity(1.0);
+}*/
+
+img {
+	width: 250px;
+	height: 250px;
+	padding:0px 0px 0px 0px;
+
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(0,255,255);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(0,255,255);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button {
+    background-color: rgb(9, 193, 227); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button1 {
+    background-color: rgba(9, 193, 227,0);
+    color: white;
+	border: 2px solid rgb(9, 193, 227);
+}
+
+.button1:hover {
+    background-color: rgb(9, 193, 227);
+    color: white;
+	border: 2px solid rgb(9, 193, 227);
+}
